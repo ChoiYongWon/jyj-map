@@ -1,6 +1,5 @@
 import styled, { useTheme } from "styled-components"
 import {FaSearch} from "react-icons/fa"
-import {useMediaQuery} from "react-responsive"
 
 const Wrapper = styled.div`
     width: 80%;
@@ -24,16 +23,11 @@ const Input = styled.input`
     }
 `
 
-const SearchIcon = styled.div`
-
-
-`
-
 const Icon = styled(FaSearch)`
     width: 25px;
     height: 25px;
     position: absolute;
-    top: 10px;
+    top: 24%;
     right: 26px;
     
     @media screen and (max-width: 500px) {
@@ -49,9 +43,6 @@ type Props = {
 export default function InputBox(props: Props){
 
     const theme: any = useTheme()
-    const Mobile = useMediaQuery({
-        query: '(max-width: 500px)'
-    })
     
     return (
         <Wrapper>
