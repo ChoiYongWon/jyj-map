@@ -33,7 +33,7 @@ export default function MapContainer({children}: any){
         <>
             <svg
                 width="100%"
-                height="90%"
+                height="85%"
                 viewBox="0 0 800 1200"
             >
                 <Korea map={theme.map} background={theme.background}>

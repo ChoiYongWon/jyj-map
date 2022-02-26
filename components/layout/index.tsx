@@ -12,6 +12,7 @@ export default function Layout({ children }: any) {
                 display: flex;
                 width: 100%;
                 height: 100%;
+                flex-direction: column;
                 background: ${theme.background};
             }
         `}</style>
