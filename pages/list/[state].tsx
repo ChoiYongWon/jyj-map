@@ -1,5 +1,11 @@
 import ListLayout from "../../components/layout/list"
-import ListContainer from "../../containers/list/ListContainer"
+import dynamic from 'next/dynamic'
+// import ListContainer from "../../containers/list/ListContainer"
+
+const ListContainer = dynamic(
+  () => import("../../containers/list/ListContainer"),
+  { ssr: false }
+)
 
 export default function List(props: any){
 
@@ -11,12 +17,3 @@ export default function List(props: any){
         </>
     )
 }
-
-export async function getServerSideProps(context: any) {
-
-    return {
-        props:{
-            state: context.params.state
-        }
-    }
-  }

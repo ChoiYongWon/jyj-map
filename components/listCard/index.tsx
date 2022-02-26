@@ -9,6 +9,7 @@ const Wrapper = styled.div`
     max-width: 500px;
     display: flex;
     margin: 0 auto;
+    margin-bottom: 16px;
 `
 
 const LeftWrapper = styled.div`

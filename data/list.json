@@ -1,7 +1,9 @@
 {
     "data" : {
         "서울" : [
-            {"name": "수빈 식당", "address": "서울특별시 광진구 자양로 5길 22", "menu" : ["한식"], "kakaoUrl" : "https://place.map.kakao.com/16298809", "naverUrl" : "http://naver.me/xGOF32qq"}
+            {"name": "수빈 식당", "address": "서울특별시 광진구 자양로 5길 22", "menu" : ["한식"], "kakaoUrl" : "https://place.map.kakao.com/16298809", "naverUrl" : "http://naver.me/xGOF32qq"},
+            {"name": "최대패", "address": "서울특별시 광진구 자양로 13길 16 1층", "menu" : ["육류, 고기요리"], "kakaoUrl" : "https://place.map.kakao.com/1236869984", "naverUrl" : "http://naver.me/xYQTN3XG"},
+            {"name": "우리소양평해장국 본점", "address": "서울 금천구 범안로 1244", "menu" : ["해장국"], "kakaoUrl" : "https://place.map.kakao.com/16302469", "naverUrl" : "http://naver.me/IFjIrvpI"}
         ],
         "경기" : [],
         "강원" : [],

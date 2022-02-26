@@ -1,9 +1,10 @@
 import Title from "../../components/title_list"
 import InputBox from "../../components/inputBox"
 import ListCard from "../../components/listCard"
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import styled, { useTheme } from "styled-components"
 import listData from "../../data/list.json"
+import { useRouter } from "next/router"
 
 
 const ResultMessage = styled.div`
@@ -16,16 +17,18 @@ const ResultMessage = styled.div`
 
 
 export default function ListContainer(props :any){
-
+    const router = useRouter()
     const theme: any = useTheme()
     const [query, setQuery] = useState("")
     const [viewList, setViewList] = useState([])
 
+    
     useEffect(()=>{
-        const state = props.state
+        const state = router.query.state
         // @ts-ignore
         const data = listData.data[state]
         setViewList(data.filter((data:any)=>data.name.includes(query) || data.address.includes(query) || data.menu.filter((menu:any)=>menu.includes(query)).length > 0 ))
+        
     }, [query])
 
     const queryOnChange = (e: any) => {
