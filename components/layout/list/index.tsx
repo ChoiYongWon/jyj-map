@@ -1,6 +1,6 @@
 import { useTheme } from "styled-components"
 
-export default function Layout({ children }: any) {
+export default function ListLayout({ children }: any) {
   
   const theme: any = useTheme()
 
@@ -13,7 +13,7 @@ export default function Layout({ children }: any) {
                 width: 100%;
                 height: 100%;
                 flex-direction: column;
-                background: ${theme.color_4};
+                background: ${theme.background};
             }
         `}</style>
         {children}

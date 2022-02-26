@@ -40,7 +40,7 @@ export default function Title(props: any){
                 <LogoWrapper>
                     <Image src={Svg}></Image>
                 </LogoWrapper>
-                <H1>정용진 회장의 맛집 List</H1>
+                <H1>정용진 부회장의 맛집 List</H1>
             </div>
             
         </Wrapper>

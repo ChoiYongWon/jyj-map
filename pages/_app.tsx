@@ -9,7 +9,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <> 
             <Head>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <title>정용진 회장의 맛집 리스트</title>
+                <title>정용진 부회장의 맛집 리스트</title>
             </Head>
             <GlobalStyle />
             <ThemeProvider theme={darkTheme}>

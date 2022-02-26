@@ -1,9 +1,9 @@
 const theme = {
-    map: "#303841",
-    background: "#EEEEEE",
+    color_1: "#303841", //dark
+    color_2: "#3A4750", //light dark
+    color_3: "#F6C90E", //yellow
+    color_4: "#EEEEEE", //white
     indicator: "rgba(26, 26, 26, 80%)",
-    indicator__name: "#EEEEEE",
-    indicator__count: "#F6C90E"
 }
 // 후보 3
 // const theme = {

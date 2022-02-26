@@ -2,6 +2,8 @@ import { Busan, Chungbuk, Chungnam, Daegu, Daejeon, Gangwon, Gwangju, Gyeongbuk,
 import Indicator from "../../components/indicator"
 import styled, {useTheme} from "styled-components"
 import indicatorData from "../../data/indicator.json"
+import listData from "../../data/list.json"
+import { useRouter } from "next/router"
 
 
 type MapProps = {
@@ -27,7 +29,7 @@ const Korea = styled.g`
 
 export default function MapContainer({children}: any){
     const theme: any = useTheme()
-
+    const router = useRouter()
 
     return (
         <>
@@ -36,7 +38,7 @@ export default function MapContainer({children}: any){
                 height="85%"
                 viewBox="0 0 800 1200"
             >
-                <Korea map={theme.map} background={theme.background}>
+                <Korea map={theme.color_1} background={theme.color_4}>
                     <Seoul></Seoul>
                     <Daegu></Daegu>
                     <Sejong></Sejong>
@@ -57,9 +59,13 @@ export default function MapContainer({children}: any){
                 </Korea>
 
                 {
-                    indicatorData.data.map((data, i)=>(
-                        <Indicator key={i} name={data.name} count={data.count} coord={[data.coord[0],data.coord[1]]}></Indicator>
-                    ))
+                    indicatorData.data.map((data, i)=>{
+                        // @ts-ignore
+                        const list:listType = listData
+                        const count  = list.data[data.name].length
+                        
+                        return <Indicator onClick={()=>router.push(`list/${data.name}`)} key={i} name={data.name} count={count} coord={[data.coord[0],data.coord[1]]}></Indicator>
+                    })
                 }
 
             </svg>

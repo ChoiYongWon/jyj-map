@@ -30,6 +30,7 @@ type Props = {
     name: string
     count: number
     coord: number[]
+    onClick: ()=>void
 }
 
 export default function Indicator(props: Props){
@@ -44,10 +45,10 @@ export default function Indicator(props: Props){
 
     return (
         
-            <Wrapper transform={`translate(${props.coord[0]},${props.coord[1]}) scale(1.1)`}>
+            <Wrapper onClick={props.onClick} transform={`translate(${props.coord[0]},${props.coord[1]}) scale(1.1)`}>
                 <Card x="0" y="0" width="100" height="80" rx="10" ry="10" fill={theme.indicator}/>
-                <Name x="50" y="30"textAnchor="middle" fill={theme.indicator__name}>{props.name}</Name>
-                <Count x="50" y="60" textAnchor="middle" fill={theme.indicator__count} ref={countUpRef}></Count>
+                <Name x="50" y="30"textAnchor="middle" fill={theme.color_4}>{props.name}</Name>
+                <Count x="50" y="60" textAnchor="middle" fill={theme.color_3} ref={countUpRef}></Count>
 
                 <svg x="0" y="0" width="100" height="80">
                 </svg>
