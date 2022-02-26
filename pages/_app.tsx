@@ -2,7 +2,7 @@ import type { AppProps } from "next/app"
 import Head from "next/head";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "../styles/global-style";
-import theme from "../styles/theme"
+import darkTheme from "../styles/dark-theme"
 
 export default function App({ Component, pageProps }: AppProps) {
     return (
@@ -12,7 +12,7 @@ export default function App({ Component, pageProps }: AppProps) {
                 <title>정용진 회장의 맛집 리스트</title>
             </Head>
             <GlobalStyle />
-            <ThemeProvider theme={theme}>
+            <ThemeProvider theme={darkTheme}>
                 <Component {...pageProps} />
             </ThemeProvider>
         </>
