@@ -12,7 +12,7 @@ export default function List(props: any){
     return (
         <>
             <ListLayout>
-                <ListContainer state={props.state}></ListContainer>
+                <ListContainer></ListContainer>
             </ListLayout>
         </>
     )

@@ -37,7 +37,7 @@ export default function ListContainer(props :any){
 
     return(
         <>
-            <Title name={props.state as string}></Title>
+            <Title name={router.query.state as string}></Title>
             <InputBox onChange={queryOnChange}></InputBox>
             <ResultMessage style={{color: theme.color_1}}>검색결과 총 {viewList.length}개</ResultMessage>
             {
