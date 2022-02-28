@@ -3,10 +3,9 @@ import styled, { useTheme } from "styled-components"
 const Wrapper = styled.div`
     max-width: 500px;
     width: 80%;
-    height: 12%;
+    min-height: 12%;
     box-sizing: border-box;
     display: flex;
-    align-items: center;
     margin: 0 auto;
     align-items: flex-end;
     font-weight: bold;
