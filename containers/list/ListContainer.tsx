@@ -65,7 +65,6 @@ export default function ListContainer(props: any) {
 
 	const onCategoryClick = (e: any) => {
 		const menu = e.currentTarget.innerText;
-		console.log(e.currentTarget.innerText);
 		setQuery((state) => `${state} ${menu}`);
 	};
 

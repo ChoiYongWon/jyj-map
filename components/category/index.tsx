@@ -26,6 +26,7 @@ const Toggle = styled.details`
 	padding: 16px 0 0;
 	box-sizing: border-box;
 	text-align: end;
+	outline: 0;
 `;
 
 const ToggleTitle = styled.summary`
