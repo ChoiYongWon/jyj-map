@@ -76,7 +76,7 @@ export default function ListContainer(props: any) {
 		<>
 			<Title name={router.query.state as string} />
 			<InputBox value={query} onChange={queryOnChange} />
-			{/* <Category categories={categories} onCategoryClick={onCategoryClick} /> */}
+			<Category categories={categories} onCategoryClick={onCategoryClick} />
 			<ResultMessage style={{ color: theme.color_1 }}>
 				검색결과 총 {viewList.filter((data: any) => data.isView).length}개
 			</ResultMessage>
