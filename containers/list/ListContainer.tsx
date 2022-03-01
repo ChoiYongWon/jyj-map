@@ -80,17 +80,19 @@ export default function ListContainer(props: any) {
 			<ResultMessage style={{ color: theme.color_1 }}>
 				검색결과 총 {viewList.filter((data: any) => data.isView).length}개
 			</ResultMessage>
-			{viewList.map((data: any, i) => (
-				<ListCard
-					key={i}
-					isView={data.isView}
-					name={data.name}
-					address={data.address}
-					kakaoUrl={data.kakaoUrl}
-					naverUrl={data.naverUrl}
-					menu={data.menu}
-				/>
-			))}
+			{viewList
+				.filter((data: any) => data.isView)
+				.map((data: any, i) => (
+					<ListCard
+						key={i}
+						isView={data.isView}
+						name={data.name}
+						address={data.address}
+						kakaoUrl={data.kakaoUrl}
+						naverUrl={data.naverUrl}
+						menu={data.menu}
+					/>
+				))}
 		</>
 	);
 }
