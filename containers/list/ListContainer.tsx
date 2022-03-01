@@ -82,17 +82,19 @@ export default function ListContainer(props: any) {
 			</ResultMessage>
 			{viewList
 				.filter((data: any) => data.isView)
-				.map((data: any, i) => (
-					<ListCard
-						key={i}
-						isView={data.isView}
-						name={data.name}
-						address={data.address}
-						kakaoUrl={data.kakaoUrl}
-						naverUrl={data.naverUrl}
-						menu={data.menu}
-					/>
-				))}
+				.map((data: any, i) => {
+					return (
+						<ListCard
+							key={i}
+							isView={data.isView}
+							name={data.name}
+							address={data.address}
+							kakaoUrl={data.kakaoUrl}
+							naverUrl={data.naverUrl}
+							menu={data.menu}
+						/>
+					);
+				})}
 		</>
 	);
 }

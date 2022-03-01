@@ -115,4 +115,7 @@ function Content(props: Props) {
 	);
 }
 
-export default memo(Content, () => true);
+export default memo(
+	Content,
+	(prevProps, nextProps) => prevProps.name === nextProps.name
+);

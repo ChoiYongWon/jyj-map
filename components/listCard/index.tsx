@@ -28,7 +28,6 @@ type Props = {
 
 function ListCard(props: Props) {
 	const theme: any = useTheme();
-
 	return (
 		<Wrapper isView={props.isView}>
 			<Content
@@ -44,5 +43,6 @@ function ListCard(props: Props) {
 
 export default memo(
 	ListCard,
-	(prevProps, nextProps) => prevProps.isView === nextProps.isView
+	(prevProps, nextProps) =>
+		prevProps.isView === nextProps.isView && prevProps.name === nextProps.name
 );
