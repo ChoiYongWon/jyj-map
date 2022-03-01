@@ -640,6 +640,22 @@
 				"menu": ["돼지고기구이"],
 				"kakaoUrl": "http://kko.to/6yrUx9Cfz",
 				"naverUrl": "http://naver.me/F2vYrV2u"
+			},
+			{
+				"id": 80,
+				"name": "도쿄등심",
+				"address": "서울특별시 강남구 도산대로49길 9 스타크빌딩 3층",
+				"menu": ["소고기구이"],
+				"kakaoUrl": "http://kko.to/hhLJiPn0Y",
+				"naverUrl": "http://naver.me/FGoelXJG"
+			},
+			{
+				"id": 81,
+				"name": "을지로보석",
+				"address": "서울 중구 마른내로 11-10",
+				"menu": ["한식안주"],
+				"kakaoUrl": "http://kko.to/nuUd_OUnD",
+				"naverUrl": "http://naver.me/FS6OOFs0"
 			}
 		],
 		"경기": [
@@ -1954,6 +1970,14 @@
 				"menu": ["냉면"],
 				"kakaoUrl": "http://kko.to/AlmQH3Qo7",
 				"naverUrl": "http://naver.me/F4NtWGGR"
+			},
+			{
+				"id": 164,
+				"name": "여기 풍천민물장어",
+				"address": "경기도 성남시 분당구 대왕판교로 266",
+				"menu": ["장어", "먹장어요리"],
+				"kakaoUrl": "http://kko.to/1mysSvFpk",
+				"naverUrl": "http://naver.me/5iz0zjU6"
 			}
 		],
 		"강원": [
@@ -5424,6 +5448,14 @@
 				"menu": ["해장국"],
 				"kakaoUrl": "http://kko.to/bE4u3kUBy",
 				"naverUrl": "http://naver.me/F8KnzquQ"
+			},
+			{
+				"id": 48,
+				"name": "숙성도",
+				"address": "제주 제주시 원노형로 41 1층",
+				"menu": ["돼지고기구이"],
+				"kakaoUrl": "http://kko.to/wt04WsVdK",
+				"naverUrl": "http://naver.me/Gul0N4al"
 			}
 		]
 	}
