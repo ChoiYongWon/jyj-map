@@ -3,8 +3,16 @@ import Naver from "../../public/naver.jpg";
 import Kakao from "../../public/kakao.jpg";
 import Link from "next/link";
 import Image from "next/image";
+import { memo } from "react";
+
+type MenuProps = {
+	isView: boolean;
+};
 
 const Wrapper = styled.div`
+	position: ${(props: MenuProps) => (props.isView ? `relative` : `absolute`)};
+	visibility: ${(props: MenuProps) => (props.isView ? `visible` : `hidden`)};
+	pointer-events: ${(props: MenuProps) => (props.isView ? `all` : `none`)};
 	width: 80%;
 	max-width: 500px;
 	display: flex;
@@ -75,13 +83,14 @@ type Props = {
 	kakaoUrl: string;
 	naverUrl: string;
 	menu: string[];
+	isView: boolean;
 };
 
-export default function ListCard(props: Props) {
+function ListCard(props: Props) {
 	const theme: any = useTheme();
 
 	return (
-		<Wrapper>
+		<Wrapper isView={props.isView}>
 			<LeftWrapper style={{ background: theme.color_1 }}>
 				<Name style={{ color: theme.color_3 }}>{props.name}</Name>
 				<Address style={{ color: theme.color_4, marginTop: "8px" }}>
@@ -121,3 +130,8 @@ export default function ListCard(props: Props) {
 		</Wrapper>
 	);
 }
+
+export default memo(
+	ListCard,
+	(prevProps, nextProps) => prevProps.isView === nextProps.isView
+);
