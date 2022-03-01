@@ -45,6 +45,7 @@ const MapButton = styled(Image)`
 const Name = styled.span`
 	font-size: 20px;
 	font-weight: bold;
+	line-height: 1.2;
 `;
 
 const Address = styled.span`
