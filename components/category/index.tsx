@@ -26,7 +26,7 @@ const Toggle = styled.details`
 	padding: 16px 0 0;
 	box-sizing: border-box;
 	text-align: end;
-	outline: 0;
+	outline: none;
 `;
 
 const ToggleTitle = styled.summary`
@@ -34,6 +34,7 @@ const ToggleTitle = styled.summary`
 	cursor: pointer;
 	font-weight: bold;
 	padding: 0 0 12px;
+	outline: none;
 `;
 
 type Props = {
