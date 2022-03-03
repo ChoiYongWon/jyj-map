@@ -10,7 +10,6 @@ export default function App({ Component, pageProps }: AppProps) {
 		<>
 			<Head>
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
-				<title>정용진 부회장의 전국맛집지도</title>
 			</Head>
 			<GlobalStyle />
 			<ThemeProvider theme={darkTheme}>
