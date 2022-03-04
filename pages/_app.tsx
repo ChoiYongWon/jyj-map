@@ -26,7 +26,7 @@ export default function App({ Component, pageProps }: AppProps) {
 						title: '정용진 부회장의 전국맛집지도',
 						description: '신세계 정용진 부회장이 선정한 전국 맛집을 알아보세요!',
 						images: [{
-							url: "https://raw.githubusercontent.com/ChoiYongWon/jyj-map/main/public/kakao.jpg",
+							url: "https://raw.githubusercontent.com/ChoiYongWon/jyj-map/main/public/jyjmap.png",
 							width: 800,
 							height: 600,
 							alt: "대표 이미지"
