@@ -12,7 +12,7 @@ export default function ListLayout({ children }: any) {
 						width: 100%;
 						height: 100%;
 						flex-direction: column;
-						background: ${theme.background};
+						background: ${theme.color_4};
 					}
 				`}</style>
 				{children}
