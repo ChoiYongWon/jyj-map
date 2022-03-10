@@ -50,7 +50,7 @@ export default function InputBox(props: Props) {
 				value={props.value}
 				onChange={props.onChange}
 				style={{ background: theme.color_1, color: theme.color_4 }}
-				placeholder="지역명, 음식명, 메뉴명"
+				placeholder="지역구"
 			></Input>
 			<Icon style={{ color: theme.color_4 }} />
 		</Wrapper>
