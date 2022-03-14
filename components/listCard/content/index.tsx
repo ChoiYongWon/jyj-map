@@ -63,6 +63,7 @@ const Menu = styled.div`
 `;
 
 type Props = {
+	id: number;
 	name: string;
 	address: string;
 	kakaoUrl: string;

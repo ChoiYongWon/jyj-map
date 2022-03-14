@@ -6,6 +6,7 @@ import styled, { useTheme } from "styled-components";
 import listDataJson from "../../data/list.json";
 import { useRouter } from "next/router";
 import Category from "../../components/category";
+import useThrottle from "../../hooks/useThrottle";
 
 const ResultMessage = styled.div`
 	margin: 30px auto 8px;
@@ -19,6 +20,7 @@ export default function ListContainer(props: any) {
 	const router = useRouter();
 	const theme: any = useTheme();
 	const [query, setQuery] = useState("");
+	const searchQuery = useThrottle(query);
 	const [viewList, setViewList] = useState([]);
 	const [categories, setCategories] = useState<string[]>([]);
 	const listData = useRef(listDataJson);
@@ -27,10 +29,11 @@ export default function ListContainer(props: any) {
 		const state = router.query.state;
 		// @ts-ignore
 		const data = listData.current.data[state];
+		const queries = searchQuery.split(" ").filter((str) => str);
 		setViewList(
-			data.map((data: any) => {
+			data.filter((data: any) => {
 				let count = 0;
-				const queries = query.split(" ").filter((str) => str);
+				const queries = searchQuery.split(" ").filter((str) => str);
 				for (let i = 0; i < queries.length; i++) {
 					if (
 						data.name.includes(queries[i]) ||
@@ -42,22 +45,20 @@ export default function ListContainer(props: any) {
 					}
 				}
 				if (queries.length == count) {
-					return { ...data, isView: true };
+					return true;
 				} else {
-					return { ...data, isView: false };
+					return false;
 				}
 			})
 		);
-	}, [query]);
+	}, [searchQuery]);
 
 	useEffect(() => {
 		const tmp: any = {};
 
 		viewList.forEach((data: any) => {
-			if (data.isView) {
-				const menu = data.menu;
-				menu.forEach((menu: string) => (tmp[menu] = true));
-			}
+			const menu = data.menu;
+			menu.forEach((menu: string) => (tmp[menu] = true));
 		});
 
 		setCategories(Object.keys(tmp));
@@ -78,23 +79,19 @@ export default function ListContainer(props: any) {
 			<InputBox value={query} onChange={queryOnChange} />
 			<Category categories={categories} onCategoryClick={onCategoryClick} />
 			<ResultMessage style={{ color: theme.color_1 }}>
-				검색결과 총 {viewList.filter((data: any) => data.isView).length}개
+				검색결과 총 {viewList.length}개
 			</ResultMessage>
-			{viewList
-				.filter((data: any) => data.isView)
-				.map((data: any, i) => {
-					return (
-						<ListCard
-							key={i}
-							isView={data.isView}
-							name={data.name}
-							address={data.address}
-							kakaoUrl={data.kakaoUrl}
-							naverUrl={data.naverUrl}
-							menu={data.menu}
-						/>
-					);
-				})}
+			{viewList.map((data: any, i) => (
+				<ListCard
+					key={i}
+					id={data.id}
+					name={data.name}
+					address={data.address}
+					kakaoUrl={data.kakaoUrl}
+					naverUrl={data.naverUrl}
+					menu={data.menu}
+				/>
+			))}
 		</>
 	);
 }

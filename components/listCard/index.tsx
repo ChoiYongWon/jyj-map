@@ -2,14 +2,7 @@ import styled, { useTheme } from "styled-components";
 import { memo } from "react";
 import Content from "./content";
 
-type MenuProps = {
-	isView: boolean;
-};
-
 const Wrapper = styled.div`
-	position: ${(props: MenuProps) => (props.isView ? `relative` : `absolute`)};
-	visibility: ${(props: MenuProps) => (props.isView ? `visible` : `hidden`)};
-	pointer-events: ${(props: MenuProps) => (props.isView ? `all` : `none`)};
 	width: 80%;
 	max-width: 500px;
 	display: flex;
@@ -18,19 +11,20 @@ const Wrapper = styled.div`
 `;
 
 type Props = {
+	id: number;
 	name: string;
 	address: string;
 	kakaoUrl: string;
 	naverUrl: string;
 	menu: string[];
-	isView: boolean;
 };
 
 function ListCard(props: Props) {
 	const theme: any = useTheme();
 	return (
-		<Wrapper isView={props.isView}>
+		<Wrapper>
 			<Content
+				id={props.id}
 				name={props.name}
 				address={props.address}
 				kakaoUrl={props.kakaoUrl}
@@ -43,6 +37,5 @@ function ListCard(props: Props) {
 
 export default memo(
 	ListCard,
-	(prevProps, nextProps) =>
-		prevProps.isView === nextProps.isView && prevProps.name === nextProps.name
+	(prevProps, nextProps) => prevProps.id === nextProps.id
 );
