@@ -17,7 +17,7 @@ const Input = styled.input`
 	outline: none;
 	border: none;
 	font-size: 18px;
-
+	caret-color: #eeeeee;
 	@media screen and (max-width: 500px) {
 		font-size: 16px;
 	}
